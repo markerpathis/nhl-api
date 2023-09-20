@@ -10,7 +10,19 @@ import Box from "@mui/material/Box";
 
 import TeamMap from "../utils/TeamMap";
 
+var moment = require("moment-timezone");
+
 const ScheduleTable = ({ schedule }) => {
+  const momentFormat = (time) => {
+    const gameTime = moment(time).local().format("h:mm A");
+
+    const zoneName = moment.tz.guess();
+    const timeZone = moment.tz(zoneName).zoneAbbr();
+
+    const formattedTime = gameTime + " " + timeZone;
+
+    return formattedTime;
+  };
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -48,7 +60,7 @@ const ScheduleTable = ({ schedule }) => {
                   </Box>
                 </TableCell>
 
-                <TableCell align="center">{game.gameDate}</TableCell>
+                <TableCell align="center">{momentFormat(game.gameDate)}</TableCell>
               </TableRow>
             ))}
         </TableBody>
