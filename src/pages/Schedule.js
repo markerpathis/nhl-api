@@ -8,11 +8,11 @@ const Schedule = () => {
   const getSchedule = () => {
     // starting just with the Kraken (teamId=55)
     // const schduleApiUrl = "https://statsapi.web.nhl.com/api/v1/schedule?teamId=55&startDate=2023-09-01&endDate=2025-01-01";
-    const schduleApiUrl = "https://statsapi.web.nhl.com/api/v1/schedule?startDate=2023-09-01&endDate=2025-01-01";
+    const schduleApiUrl = "https://statsapi.web.nhl.com/api/v1/schedule?startDate=2023-09-25&endDate=2023-09-25";
     axios
       .get(schduleApiUrl)
       .then((data) => {
-        setSchedule(data.data.dates);
+        setSchedule(data.data.dates[0].games);
       })
       .catch((err) => {
         console.log(err);
@@ -28,7 +28,7 @@ const Schedule = () => {
   return (
     <div>
       <div>Schedule</div>
-      <ScheduleTable />
+      <ScheduleTable schedule={schedule} />
     </div>
   );
 };
