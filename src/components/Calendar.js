@@ -6,7 +6,7 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 const Calendar = () => {
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DatePicker label="Select Date" />
+      <DatePicker label="Select Date" sx={{ mt: 1 }} />
     </LocalizationProvider>
   );
 };

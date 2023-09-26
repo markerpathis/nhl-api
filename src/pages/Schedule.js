@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ScheduleTable from "../components/ScheduleTable";
 import Calendar from "../components/Calendar";
+import { Container } from "@mui/material";
+import Typography from "@mui/material/Typography";
 
 const Schedule = () => {
   const [schedule, setSchedule] = useState({});
@@ -25,11 +27,11 @@ const Schedule = () => {
   }, []);
 
   return (
-    <div>
-      <div>Schedule</div>
+    <Container sx={{ margin: "auto", width: "80%", mt: 4 }}>
+      <Typography sx={{ fontWeight: "bold", fontSize: 30 }}>Schedule</Typography>
       <Calendar />
       {schedule.length > 0 && schedule.map((gameDate) => <ScheduleTable key={gameDate.date} schedule={gameDate} />)}
-    </div>
+    </Container>
   );
 };
 

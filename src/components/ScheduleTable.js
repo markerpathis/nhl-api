@@ -29,7 +29,7 @@ const ScheduleTable = ({ schedule, error }) => {
 
   return (
     <>
-      <TableContainer component={Paper} sx={{ display: "flex", margin: "auto", width: "80%", mt: 3 }}>
+      <TableContainer component={Paper} sx={{ display: "flex", mt: 2 }}>
         <Table sx={{ minWidth: 450 }} aria-label="simple table">
           <TableHead sx={{ display: "table-header-group" }}>
             <TableRow>
