@@ -28,7 +28,7 @@ const Schedule = () => {
     <div>
       <div>Schedule</div>
       <Calendar />
-      {schedule.length > 0 && schedule.map((date) => <ScheduleTable key={Math.random()} schedule={date} />)}
+      {schedule.length > 0 && schedule.map((gameDate) => <ScheduleTable key={gameDate.date} schedule={gameDate} />)}
     </div>
   );
 };
