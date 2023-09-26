@@ -12,7 +12,10 @@ import TeamMap from "../utils/TeamMap";
 
 var moment = require("moment-timezone");
 
-const ScheduleTable = ({ schedule }) => {
+const ScheduleTable = ({ schedule, error }) => {
+  console.log(schedule.games);
+  // console.log(error);
+
   const momentFormat = (time) => {
     const gameTime = moment(time).local().format("h:mm A");
 
@@ -23,44 +26,47 @@ const ScheduleTable = ({ schedule }) => {
 
     return formattedTime;
   };
+
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+    <TableContainer component={Paper} sx={{ display: "flex", margin: "auto", width: "80%" }}>
+      <Table sx={{ minWidth: 450 }} aria-label="simple table">
         <TableHead sx={{ display: "table-header-group" }}>
           <TableRow>
             <TableCell align="center">Matchup</TableCell>
-
             <TableCell align="center">Time</TableCell>
           </TableRow>
         </TableHead>
 
         <TableBody>
-          {schedule.length > 0 &&
-            schedule.map((game) => (
+          {schedule.games.length > 0 &&
+            schedule.games.map((game) => (
               <TableRow key={game.gamePk}>
+                {console.log(game)}
                 <TableCell sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <Box align="right" sx={{ width: 75, px: 1 }}>
+                  <Box align="right" sx={{ width: "25%", px: 1 }}>
                     {TeamMap[game.teams.away.team.id]?.location}
                   </Box>
 
-                  <Box align="center" sx={{ width: 40, px: 1 }}>
+                  <Box align="center" sx={{ px: 1 }}>
                     <img src={TeamMap[game.teams.away.team.id]?.logo} alt="" width={40} />
                   </Box>
 
-                  <Box align="center" sx={{ width: 10, px: 1 }}>
+                  <Box align="center" sx={{ width: "10%", px: 1 }}>
                     @
                   </Box>
 
-                  <Box align="center" sx={{ width: 40, px: 1 }}>
+                  <Box align="center" sx={{ px: 1 }}>
                     <img src={TeamMap[game.teams.home.team.id]?.logo} alt="" width={40} />
                   </Box>
 
-                  <Box align="left" sx={{ width: 75, px: 1 }}>
+                  <Box align="left" sx={{ width: "25%", px: 1 }}>
                     {TeamMap[game.teams.home.team.id]?.location}
                   </Box>
                 </TableCell>
 
-                <TableCell align="center">{momentFormat(game.gameDate)}</TableCell>
+                <TableCell align="center" sx={{ width: "25%" }}>
+                  {momentFormat(game.gameDate)}
+                </TableCell>
               </TableRow>
             ))}
         </TableBody>
