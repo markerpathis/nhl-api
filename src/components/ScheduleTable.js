@@ -13,7 +13,7 @@ import TeamMap from "../utils/TeamMap";
 var moment = require("moment-timezone");
 
 const ScheduleTable = ({ schedule, error }) => {
-  console.log(schedule.games);
+  // console.log(schedule.games);
   // console.log(error);
 
   const momentFormat = (time) => {
