@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ScheduleTable from "../components/ScheduleTable";
 import Calendar from "../components/Calendar";
+import TeamSelect from "../components/TeamSelect";
 import { Container } from "@mui/material";
 import Typography from "@mui/material/Typography";
+import FormControl from "@mui/material/FormControl";
 
 var moment = require("moment-timezone");
 
@@ -38,7 +40,14 @@ const Schedule = () => {
   return (
     <Container sx={{ bgcolor: "background.paper", margin: "auto", width: "80%", my: "24px", px: "16px", pb: "16px", borderRadius: "10px" }}>
       <Typography sx={{ fontWeight: 900, fontSize: 33, pt: 2 }}>NHL Schedule</Typography>
-      <Calendar defaultDate={defaultDate} onDateSelect={dateChangeHandler} />
+      <FormControl sx={{ mt: 2, pr: 1 }}>
+        <Calendar defaultDate={defaultDate} onDateSelect={dateChangeHandler} />
+      </FormControl>
+      <FormControl sx={{ mt: 2, pr: 1 }}>
+        <TeamSelect />
+      </FormControl>
+      <Typography sx={{ fontStyle: "italic", pt: 1, fontSize: 14 }}>Games will be shown for the next 7 days from your selected date.</Typography>
+
       {schedule.length > 0 && schedule.map((gameDate) => <ScheduleTable key={gameDate.date} schedule={gameDate} />)}
     </Container>
   );

@@ -33,130 +33,162 @@ import SeattleLogo from "../assets/logos/nhl-seattle-kraken-logo.png";
 
 const TeamMap = {
   1: {
+    label: "New Jersey Devils",
     location: "New Jersey",
     logo: NJLogo,
   },
   2: {
+    label: "New York Islanders",
     location: "New York",
     logo: NYIslandersLogo,
   },
   3: {
+    label: "New York Rangers",
     location: "New York",
     logo: NYRangersLogo,
   },
   4: {
+    label: "Philadelphia Flyers",
     location: "Philadelphia",
     logo: PhiladelphiaLogo,
   },
   5: {
+    label: "Pittsburgh Penguins",
     location: "Pittsburgh",
     logo: PittsburghLogo,
   },
   6: {
+    label: "Boston Bruins",
     location: "Boston",
     logo: BostonLogo,
   },
   7: {
+    label: "Buffalo Sabres",
     location: "Buffalo",
     logo: BuffaloLogo,
   },
   8: {
+    label: "Montréal Canadiens",
     location: "Montréal",
     logo: MontrealLogo,
   },
   9: {
+    label: "Ottawa Senators",
     location: "Ottawa",
     logo: OttawaLogo,
   },
   10: {
+    label: "Toronto Maple Leafs",
     location: "Toronto",
     logo: TorontoLogo,
   },
   12: {
+    label: "Carolina Hurricanes",
     location: "Carolina",
     logo: CarolinaLogo,
   },
   13: {
+    label: "Florida Panthers",
     location: "Florida",
     logo: FloridaLogo,
   },
   14: {
+    label: "Tampa Lightning",
     location: "Tampa",
     logo: TampaLogo,
   },
   15: {
+    label: "Washington Capitals",
     location: "Washington",
     logo: WALogo,
   },
   16: {
+    label: "Chicago Blackhawks",
     location: "Chicago",
     logo: ChicagoLogo,
   },
   17: {
+    label: "Detroit Red Wings",
     location: "Detroit",
     logo: DetroitLogo,
   },
   18: {
+    label: "Nashbille Predators",
     location: "Nashville",
     logo: NashvilleLogo,
   },
   19: {
+    label: "St. Louis Blues",
     location: "St. Louis",
     logo: STLLogo,
   },
   20: {
+    label: "Calgary Flames",
     location: "Calgary",
     logo: CalgaryLogo,
   },
   21: {
+    label: "Colorado Avalanche",
     location: "Colorado",
     logo: ColoradoLogo,
   },
   22: {
+    label: "Edmonton Oilers",
     location: "Edmonton",
     logo: EdmontonLogo,
   },
   23: {
+    label: "Vancouver Canucks",
     location: "Vancouver",
     logo: VancouverLogo,
   },
   24: {
+    label: "Anaheim Ducks",
     location: "Anaheim",
     logo: AnaheimLogo,
   },
   25: {
+    label: "Dallas Stars",
     location: "Dallas",
     logo: DallasLogo,
   },
   26: {
+    label: "Los Angeles Kings",
     location: "Los Angeles",
     logo: LALogo,
   },
   28: {
+    label: "San Jose Sharks",
     location: "San Jose",
     logo: SanJoseLogo,
   },
   29: {
+    label: "Columbus Blue Jackets",
     location: "Columbus",
     logo: ColumbusLogo,
   },
   30: {
+    label: "Minnesota Wild",
     location: "Minnesota",
     logo: MinnesotaLogo,
   },
   52: {
+    label: "Winnipeg Jets",
     location: "Winnipeg",
     logo: WinnipegLogo,
   },
   53: {
+    label: "Arizona Coyotes",
     location: "Arizona",
     logo: ArizonaLogo,
   },
   54: {
+    label: "Vegas Golden Knights",
     location: "Vegas",
     logo: VegasLogo,
   },
   55: {
+    label: "Seattle Kraken",
     location: "Seattle",
     logo: SeattleLogo,
   },
