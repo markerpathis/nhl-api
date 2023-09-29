@@ -11,13 +11,34 @@ var moment = require("moment-timezone");
 
 const Schedule = () => {
   const [schedule, setSchedule] = useState({});
+  const [apiStartDate, setApiStartDate] = useState();
+  const [apiEndDate, setApiEndDate] = useState();
+
+  const [apiTeamId, setApiTeamId] = useState();
 
   const defaultDate = moment().format("MM/DD/YYYY");
 
   const dateChangeHandler = (value) => {
     const newApiStartDate = moment(value.$d).format("YYYY-MM-DD");
     const newApiEndDate = moment(value.$d).add(6, "d").format("YYYY-MM-DD");
-    getSchedule("https://statsapi.web.nhl.com/api/v1/schedule?startDate=" + newApiStartDate + "&endDate=" + newApiEndDate);
+
+    let teamString = "";
+    if (apiTeamId) {
+      teamString = `&teamId=${apiTeamId}`;
+    }
+
+    getSchedule("https://statsapi.web.nhl.com/api/v1/schedule?startDate=" + newApiStartDate + "&endDate=" + newApiEndDate + teamString);
+
+    setApiStartDate(newApiStartDate);
+    setApiEndDate(newApiEndDate);
+  };
+
+  const teamChangeHandler = (value) => {
+    const teamString = `&teamId=${value}`;
+    const url = "https://statsapi.web.nhl.com/api/v1/schedule?startDate=" + apiStartDate + "&endDate=" + apiEndDate + teamString;
+    getSchedule(url);
+
+    setApiTeamId(value);
   };
 
   const getSchedule = (apiUrl) => {
@@ -35,6 +56,9 @@ const Schedule = () => {
     const dateApiStartDefault = moment().format("YYYY-MM-DD");
     const dateApiEndDefault = moment().add(6, "d").format("YYYY-MM-DD");
     getSchedule("https://statsapi.web.nhl.com/api/v1/schedule?startDate=" + dateApiStartDefault + "&endDate=" + dateApiEndDefault);
+
+    setApiStartDate(dateApiStartDefault);
+    setApiEndDate(dateApiEndDefault);
   }, []);
 
   return (
@@ -44,7 +68,7 @@ const Schedule = () => {
         <Calendar defaultDate={defaultDate} onDateSelect={dateChangeHandler} />
       </FormControl>
       <FormControl sx={{ mt: 2, pr: 1 }}>
-        <TeamSelect />
+        <TeamSelect onTeamSelect={teamChangeHandler} />
       </FormControl>
       <Typography sx={{ fontStyle: "italic", pt: 1, fontSize: 14 }}>Games will be shown for the next 7 days from your selected date.</Typography>
 

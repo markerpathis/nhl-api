@@ -31,177 +31,199 @@ import ArizonaLogo from "../assets/logos/nhl-arizona-coyotes-logo.png";
 import VegasLogo from "../assets/logos/nhl-vegas-golden-knights-logo.png";
 import SeattleLogo from "../assets/logos/nhl-seattle-kraken-logo.png";
 
-// const array = Object.keys(TeampMap)
-// const array = Object.values(TeampMap)
-// const array = Object.entries(TeampMap)
-
-// const object = { a: 1, b: 2, c: 3 };
-
-// for (const property in object) {
-//   console.log(`${property}: ${object[property]}`);
-// }
-
-const TeamMap = {
-  1: {
+const TeamMap = [
+  {
+    id: 1,
     label: "New Jersey Devils",
     location: "New Jersey",
     logo: NJLogo,
   },
-  2: {
+  {
+    id: 2,
     label: "New York Islanders",
     location: "New York",
     logo: NYIslandersLogo,
   },
-  3: {
+  {
+    id: 3,
     label: "New York Rangers",
     location: "New York",
     logo: NYRangersLogo,
   },
-  4: {
+  {
+    id: 4,
     label: "Philadelphia Flyers",
     location: "Philadelphia",
     logo: PhiladelphiaLogo,
   },
-  5: {
+  {
+    id: 5,
     label: "Pittsburgh Penguins",
     location: "Pittsburgh",
     logo: PittsburghLogo,
   },
-  6: {
+  {
+    id: 6,
     label: "Boston Bruins",
     location: "Boston",
     logo: BostonLogo,
   },
-  7: {
+  {
+    id: 7,
     label: "Buffalo Sabres",
     location: "Buffalo",
     logo: BuffaloLogo,
   },
-  8: {
+  {
+    id: 8,
     label: "Montréal Canadiens",
     location: "Montréal",
     logo: MontrealLogo,
   },
-  9: {
+  {
+    id: 9,
     label: "Ottawa Senators",
     location: "Ottawa",
     logo: OttawaLogo,
   },
-  10: {
+  {
+    id: 10,
     label: "Toronto Maple Leafs",
     location: "Toronto",
     logo: TorontoLogo,
   },
-  12: {
+  {
+    id: 12,
     label: "Carolina Hurricanes",
     location: "Carolina",
     logo: CarolinaLogo,
   },
-  13: {
+  {
+    id: 13,
     label: "Florida Panthers",
     location: "Florida",
     logo: FloridaLogo,
   },
-  14: {
+  {
+    id: 14,
     label: "Tampa Lightning",
     location: "Tampa",
     logo: TampaLogo,
   },
-  15: {
+  {
+    id: 15,
     label: "Washington Capitals",
     location: "Washington",
     logo: WALogo,
   },
-  16: {
+  {
+    id: 16,
     label: "Chicago Blackhawks",
     location: "Chicago",
     logo: ChicagoLogo,
   },
-  17: {
+  {
+    id: 17,
     label: "Detroit Red Wings",
     location: "Detroit",
     logo: DetroitLogo,
   },
-  18: {
+  {
+    id: 18,
     label: "Nashbille Predators",
     location: "Nashville",
     logo: NashvilleLogo,
   },
-  19: {
+  {
+    id: 19,
     label: "St. Louis Blues",
     location: "St. Louis",
     logo: STLLogo,
   },
-  20: {
+  {
+    id: 20,
     label: "Calgary Flames",
     location: "Calgary",
     logo: CalgaryLogo,
   },
-  21: {
+  {
+    id: 21,
     label: "Colorado Avalanche",
     location: "Colorado",
     logo: ColoradoLogo,
   },
-  22: {
+  {
+    id: 22,
     label: "Edmonton Oilers",
     location: "Edmonton",
     logo: EdmontonLogo,
   },
-  23: {
+  {
+    id: 23,
     label: "Vancouver Canucks",
     location: "Vancouver",
     logo: VancouverLogo,
   },
-  24: {
+  {
+    id: 24,
     label: "Anaheim Ducks",
     location: "Anaheim",
     logo: AnaheimLogo,
   },
-  25: {
+  {
+    id: 25,
     label: "Dallas Stars",
     location: "Dallas",
     logo: DallasLogo,
   },
-  26: {
+  {
+    id: 26,
     label: "Los Angeles Kings",
     location: "Los Angeles",
     logo: LALogo,
   },
-  28: {
+  {
+    id: 28,
     label: "San Jose Sharks",
     location: "San Jose",
     logo: SanJoseLogo,
   },
-  29: {
+  {
+    id: 29,
     label: "Columbus Blue Jackets",
     location: "Columbus",
     logo: ColumbusLogo,
   },
-  30: {
+  {
+    id: 30,
     label: "Minnesota Wild",
     location: "Minnesota",
     logo: MinnesotaLogo,
   },
-  52: {
+  {
+    id: 52,
     label: "Winnipeg Jets",
     location: "Winnipeg",
     logo: WinnipegLogo,
   },
-  53: {
+  {
+    id: 53,
     label: "Arizona Coyotes",
     location: "Arizona",
     logo: ArizonaLogo,
   },
-  54: {
+  {
+    id: 54,
     label: "Vegas Golden Knights",
     location: "Vegas",
     logo: VegasLogo,
   },
-  55: {
+  {
+    id: 55,
     label: "Seattle Kraken",
     location: "Seattle",
     logo: SeattleLogo,
   },
-};
+];
 
 export default TeamMap;
