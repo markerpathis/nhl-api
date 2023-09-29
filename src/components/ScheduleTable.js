@@ -29,7 +29,7 @@ const ScheduleTable = ({ schedule, error }) => {
 
   return (
     <>
-      <TableContainer component={Paper} sx={{ display: "flex", mt: 2 }}>
+      <TableContainer component={Paper} sx={{ display: "flex", mt: 3 }}>
         <Table sx={{ minWidth: 450 }} aria-label="simple table">
           <TableHead sx={{ display: "table-header-group" }}>
             <TableRow>
@@ -60,7 +60,7 @@ const ScheduleTable = ({ schedule, error }) => {
                       <img src={TeamMap[game.teams.away.team.id]?.logo} alt="" width={40} />
                     </Box>
 
-                    <Box align="center" sx={{ width: "10%", px: 1 }}>
+                    <Box align="center" sx={{ width: "5%", px: 0 }}>
                       @
                     </Box>
 

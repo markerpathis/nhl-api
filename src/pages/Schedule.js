@@ -11,8 +11,6 @@ const Schedule = () => {
   const [schedule, setSchedule] = useState({});
 
   const defaultDate = moment().format("MM/DD/YYYY");
-  const dateApiStartDefault = moment().format("YYYY-MM-DD");
-  const dateApiEndDefault = moment().add(6, "d").format("YYYY-MM-DD");
 
   const dateChangeHandler = (value) => {
     const newApiStartDate = moment(value.$d).format("YYYY-MM-DD");
@@ -32,12 +30,14 @@ const Schedule = () => {
   };
 
   useEffect(() => {
+    const dateApiStartDefault = moment().format("YYYY-MM-DD");
+    const dateApiEndDefault = moment().add(6, "d").format("YYYY-MM-DD");
     getSchedule("https://statsapi.web.nhl.com/api/v1/schedule?startDate=" + dateApiStartDefault + "&endDate=" + dateApiEndDefault);
   }, []);
 
   return (
-    <Container sx={{ margin: "auto", width: "80%", mt: 4 }}>
-      <Typography sx={{ fontWeight: "bold", fontSize: 30 }}>Schedule</Typography>
+    <Container sx={{ bgcolor: "background.paper", margin: "auto", width: "80%", my: "24px", px: "16px", pb: "16px", borderRadius: "10px" }}>
+      <Typography sx={{ fontWeight: 900, fontSize: 33, pt: 2 }}>NHL Schedule</Typography>
       <Calendar defaultDate={defaultDate} onDateSelect={dateChangeHandler} />
       {schedule.length > 0 && schedule.map((gameDate) => <ScheduleTable key={gameDate.date} schedule={gameDate} />)}
     </Container>
