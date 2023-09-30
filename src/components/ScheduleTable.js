@@ -13,9 +13,6 @@ import TeamMap from "../utils/TeamMap";
 var moment = require("moment-timezone");
 
 const ScheduleTable = ({ schedule, error }) => {
-  // console.log(schedule.games);
-  // console.log(error);
-
   const momentFormat = (time) => {
     const gameTime = moment(time).local().format("h:mm A");
 
@@ -27,13 +24,15 @@ const ScheduleTable = ({ schedule, error }) => {
     return formattedTime;
   };
 
+  // console.log(schedule);
+
   return (
     <>
       <TableContainer component={Paper} sx={{ display: "flex", mt: 3 }}>
         <Table sx={{ minWidth: 450 }} aria-label="simple table">
           <TableHead sx={{ display: "table-header-group" }}>
             <TableRow>
-              <TableCell align="left" colSpan={2} sx={{ fontWeight: "bold", fontSize: 22 }}>
+              <TableCell align="left" colSpan={3} sx={{ fontWeight: "bold", fontSize: 22 }}>
                 {moment(schedule.date).format("dddd, MMMM Do")}
               </TableCell>
             </TableRow>
@@ -43,6 +42,9 @@ const ScheduleTable = ({ schedule, error }) => {
               </TableCell>
               <TableCell align="center" sx={{ fontWeight: "bold", fontSize: 18 }}>
                 Time
+              </TableCell>
+              <TableCell align="center" sx={{ fontWeight: "bold", fontSize: 18 }}>
+                Result
               </TableCell>
             </TableRow>
           </TableHead>
@@ -76,6 +78,23 @@ const ScheduleTable = ({ schedule, error }) => {
                   <TableCell align="center" sx={{ width: "25%" }}>
                     {momentFormat(game.gameDate)}
                   </TableCell>
+                  {game.status.abstractGameState === "Live" && (
+                    <TableCell align="center" sx={{ width: "25%" }}>
+                      Live: {TeamMap.find((team) => team.id === game.teams.away.team.id)?.abbreviation} {game.teams.away.score},{" "}
+                      {TeamMap.find((team) => team.id === game.teams.home.team.id)?.abbreviation} {game.teams.home.score}
+                    </TableCell>
+                  )}
+                  {game.status.abstractGameState === "Final" && (
+                    <TableCell align="center" sx={{ width: "25%" }}>
+                      Final: {TeamMap.find((team) => team.id === game.teams.away.team.id)?.abbreviation} {game.teams.away.score},{" "}
+                      {TeamMap.find((team) => team.id === game.teams.home.team.id)?.abbreviation} {game.teams.home.score}
+                    </TableCell>
+                  )}
+                  {game.status.abstractGameState === "Preview" && (
+                    <TableCell align="center" sx={{ width: "25%" }}>
+                      -
+                    </TableCell>
+                  )}
                 </TableRow>
               ))}
           </TableBody>
