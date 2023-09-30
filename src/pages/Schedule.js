@@ -34,7 +34,11 @@ const Schedule = () => {
   };
 
   const teamChangeHandler = (value) => {
-    const teamString = `&teamId=${value}`;
+    let teamString = ``;
+
+    if (value > 0) {
+      teamString = `&teamId=${value}`;
+    }
     const url = "https://statsapi.web.nhl.com/api/v1/schedule?startDate=" + apiStartDate + "&endDate=" + apiEndDate + teamString;
     getSchedule(url);
 
