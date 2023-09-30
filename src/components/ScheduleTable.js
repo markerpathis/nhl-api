@@ -1,4 +1,5 @@
 import React from "react";
+import { styled } from "@mui/material/styles";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -26,6 +27,16 @@ const ScheduleTable = ({ schedule, error }) => {
 
   // console.log(schedule);
 
+  const StyledTableRow = styled(TableRow)(({ theme }) => ({
+    "&:nth-of-type(odd)": {
+      backgroundColor: theme.palette.action.hover,
+    },
+    // hide last border
+    "&:last-child td, &:last-child th": {
+      border: 0,
+    },
+  }));
+
   return (
     <>
       <TableContainer component={Paper} sx={{ display: "flex", mt: 3 }}>
@@ -52,7 +63,7 @@ const ScheduleTable = ({ schedule, error }) => {
           <TableBody>
             {schedule.games.length > 0 &&
               schedule.games.map((game) => (
-                <TableRow key={game.gamePk}>
+                <StyledTableRow key={game.gamePk}>
                   <TableCell sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
                     <Box align="right" sx={{ width: "25%", px: 1, fontWeight: "bold" }}>
                       {TeamMap.find((team) => team.id === game.teams.away.team.id)?.location}
@@ -95,7 +106,7 @@ const ScheduleTable = ({ schedule, error }) => {
                       -
                     </TableCell>
                   )}
-                </TableRow>
+                </StyledTableRow>
               ))}
           </TableBody>
         </Table>
