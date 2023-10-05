@@ -6,10 +6,12 @@ const GameResultCell = ({ game }) => {
     <>
       {(game.status.abstractGameState === "Live" || game.status.abstractGameState === "Final") && (
         <Box>
+          {/* LISTS LIVE AND FINAL SCORES */}
           {game.status.abstractGameState === "Live" && `Live: `} {game.status.abstractGameState === "Final" && `Final: `}({TeamMap.find((team) => team.id === game.teams.away.team.id)?.abbreviation}{" "}
           {game.teams.away.score}, {TeamMap.find((team) => team.id === game.teams.home.team.id)?.abbreviation} {game.teams.home.score})
         </Box>
       )}
+      {/* FOR PREVIEW GAMES - DASH ONLY DISPLAYED WHEN RESULT COLUMN HEADER IS PRESENT ON LARGER SCREEN */}
       <Box sx={{ "@media screen and (max-width: 710px)": { display: "none" } }}>{game.status.abstractGameState === "Preview" && <div>-</div>}</Box>
     </>
   );

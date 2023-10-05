@@ -15,6 +15,7 @@ import GameTimeCell from "./GameTimeCell";
 import GameResultCell from "./GameResultCell";
 
 const ScheduleTable = ({ schedule, error }) => {
+  // Table row backgrounds will alternate grey and white
   const StyledTableRow = styled(TableRow)(({ theme }) => ({
     "&:nth-of-type(odd)": {
       backgroundColor: theme.palette.action.hover,
@@ -37,6 +38,7 @@ const ScheduleTable = ({ schedule, error }) => {
               </TableCell>
             </TableRow>
             <TableRow>
+              {/* ONLY MATCHUP COLUMN HEADER WILL BE SHOWN UNTIL 710PX WIDE */}
               <TableCell align="center" sx={{ fontWeight: "bold", fontSize: 18 }}>
                 Matchup
               </TableCell>
@@ -68,6 +70,7 @@ const ScheduleTable = ({ schedule, error }) => {
                     <GameResultCell game={game} />
                   </TableCell>
 
+                  {/* FOR MOBILE ONLY - TO SHOW ALL CONENTS IN SINGLE COLUMN / CELL */}
                   <TableCell align="center" sx={{ alignItems: "center", justifyContent: "center", "@media screen and (min-width: 710px)": { display: "none" } }}>
                     <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
                       <GameMatchupCell game={game} />

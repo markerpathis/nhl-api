@@ -15,10 +15,11 @@ const TeamSelect = ({ onTeamSelect }) => {
     setTeam(event.target.value);
   };
 
+  // sort teams in alphabetical order
   const sortedTeams = TeamMap.sort((a, b) => (a.label > b.label ? 1 : b.label > a.label ? -1 : 0));
 
   return (
-    <Box sx={{ minWidth: 230 }}>
+    <Box sx={{ width: "230px" }}>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Select Team</InputLabel>
         <Select labelId="demo-simple-select-label" id="demo-simple-select" value={team} label="Select Team" onChange={handleChange}>

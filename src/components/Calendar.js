@@ -7,7 +7,7 @@ import dayjs from "dayjs";
 const Calendar = ({ defaultDate, onDateSelect }) => {
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DatePicker name="datePicker" label="Select Date" defaultValue={dayjs(defaultDate)} onChange={(newValue) => onDateSelect(newValue)} />
+      <DatePicker name="datePicker" label="Select Date" sx={{ width: "230px" }} defaultValue={dayjs(defaultDate)} onChange={(newValue) => onDateSelect(newValue)} />
     </LocalizationProvider>
   );
 };
