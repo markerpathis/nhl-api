@@ -2,6 +2,7 @@
   "name": "nhl-api",
   "version": "0.1.0",
   "homepage": "https://markerpathis.github.io/nhl-api/",
+  "proxy": "http://localhost:8080/",
   "dependencies": {
     "@date-io/date-fns": "^2.17.0",
     "@date-io/dayjs": "^2.17.0",

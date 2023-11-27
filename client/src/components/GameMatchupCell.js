@@ -6,12 +6,12 @@ const GameMatchupCell = ({ game }) => {
     <>
       {/* AWAY TEAM LOCATION  */}
       <Box align="right" sx={{ width: "25%", px: 1, fontWeight: "bold" }}>
-        {TeamMap.find((team) => team.id === game.teams.away.team.id)?.location}
+        {TeamMap.find((team) => team.id === game.awayTeam.id)?.location}
       </Box>
 
       {/* AWAY TEAM LOGO */}
       <Box align="center" sx={{ px: 1 }}>
-        <img src={TeamMap.find((team) => team.id === game.teams.away.team.id)?.logo} alt="" width={40} />
+        <img src={TeamMap.find((team) => team.id === game.awayTeam.id)?.logo} alt="" width={40} />
       </Box>
 
       <Box align="center" sx={{ width: "5%", px: 0 }}>
@@ -20,12 +20,12 @@ const GameMatchupCell = ({ game }) => {
 
       {/* HOME TEAM LOGO */}
       <Box align="center" sx={{ px: 1 }}>
-        <img src={TeamMap.find((team) => team.id === game.teams.home.team.id)?.logo} alt="" width={40} />
+        <img src={TeamMap.find((team) => team.id === game.homeTeam.id)?.logo} alt="" width={40} />
       </Box>
 
       {/* HOME TEAM LOCATION */}
       <Box align="left" sx={{ width: "25%", px: 1, fontWeight: "bold" }}>
-        {TeamMap.find((team) => team.id === game.teams.home.team.id)?.location}
+        {TeamMap.find((team) => team.id === game.homeTeam.id)?.location}
       </Box>
     </>
   );
