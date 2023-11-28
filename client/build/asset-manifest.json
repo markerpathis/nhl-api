@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/nhl-api/static/css/main.4ba4fd73.css",
-    "main.js": "/nhl-api/static/js/main.92540c6d.js",
+    "main.js": "/nhl-api/static/js/main.15f85ab7.js",
     "static/js/787.ca201baf.chunk.js": "/nhl-api/static/js/787.ca201baf.chunk.js",
     "static/media/nhl-chicago-blackhawks-logo.png": "/nhl-api/static/media/nhl-chicago-blackhawks-logo.f47cd55b924e2cc63213.png",
     "static/media/nhl-florida-panthers-logo.png": "/nhl-api/static/media/nhl-florida-panthers-logo.e37c09fbf9fbbc836259.png",
@@ -37,11 +37,11 @@
     "static/media/nhl-tampa-bay-lightning-logo.png": "/nhl-api/static/media/nhl-tampa-bay-lightning-logo.25d7ca34350e0cf5e715.png",
     "index.html": "/nhl-api/index.html",
     "main.4ba4fd73.css.map": "/nhl-api/static/css/main.4ba4fd73.css.map",
-    "main.92540c6d.js.map": "/nhl-api/static/js/main.92540c6d.js.map",
+    "main.15f85ab7.js.map": "/nhl-api/static/js/main.15f85ab7.js.map",
     "787.ca201baf.chunk.js.map": "/nhl-api/static/js/787.ca201baf.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4ba4fd73.css",
-    "static/js/main.92540c6d.js"
+    "static/js/main.15f85ab7.js"
   ]
 }

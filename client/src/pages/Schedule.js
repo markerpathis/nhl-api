@@ -22,7 +22,7 @@ const Schedule = () => {
       teamString = `&teamId=${apiTeamId}`;
     }
 
-    getSchedule(`api/date/${newApiStartDate}`);
+    getSchedule(`api/schedule/${newApiStartDate}`);
   };
 
   const teamChangeHandler = (value) => {
