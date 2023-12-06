@@ -4,10 +4,11 @@ import Box from "@mui/material/Box";
 const GameResultCell = ({ game }) => {
   return (
     <>
-      {(game.gameState === "LIVE" || game.gameState === "OFF") && (
+      {(game.gameState === "LIVE" || game.gameState === "OFF" || game.gameState === "FINAL") && (
         <Box>
           {/* LISTS LIVE AND FINAL SCORES */}
-          {game.gameState === "LIVE" && `Live: `} {game.gameState === "OFF" && `Final: `}({TeamMap.find((team) => team.id === game.awayTeam.id)?.abbreviation} {game.awayTeam.score},{" "}
+          {game.gameState === "LIVE" && `Live: `} {(game.gameState === "OFF" || game.gameState === "FINAL") && `Final: `}
+          {(game.gameState === "OFF" || game.gameState === "FINAL") && `Final: `}({TeamMap.find((team) => team.id === game.awayTeam.id)?.abbreviation} {game.awayTeam.score},{" "}
           {TeamMap.find((team) => team.id === game.homeTeam.id)?.abbreviation} {game.homeTeam.score})
         </Box>
       )}
