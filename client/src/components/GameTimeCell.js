@@ -1,7 +1,7 @@
 var moment = require("moment-timezone");
 
 const GameTimeCell = ({ game }) => {
-  console.log(game);
+  // console.log(game);
   const momentFormat = (time) => {
     // guess local (example format: 4:00 PM)
     const gameTime = moment(time).local().format("h:mm A");

@@ -34,7 +34,7 @@ app.get("/api/schedule", (req, res, next) => {
 });
 
 app.get("/api/schedule/:dateVal", (req, res, next) => {
-  console.log(req);
+  // console.log(req);
   request(`https://api-web.nhle.com/v1/schedule/${req.params.dateVal}`, function (error, response, body) {
     res.send(body);
   });

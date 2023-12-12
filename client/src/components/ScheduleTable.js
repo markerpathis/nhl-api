@@ -66,7 +66,7 @@ const ScheduleTable = ({ schedule, apiTeamId }) => {
                   return apiTeamId === undefined || apiTeamId === "0" ? game : game.awayTeam.id === apiTeamId || game.homeTeam.id === apiTeamId;
                 })
                 .map((game) => (
-                  <StyledTableRow key={game.gamePk}>
+                  <StyledTableRow key={game.id}>
                     {/* MATCHUP */}
                     <TableCell sx={{ display: "flex", alignItems: "center", justifyContent: "center", "@media screen and (max-width: 710px)": { display: "none" } }}>
                       <GameMatchupCell game={game} />

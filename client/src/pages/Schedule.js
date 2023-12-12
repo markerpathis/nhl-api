@@ -38,7 +38,7 @@ const Schedule = () => {
   };
 
   const getSchedule = (apiUrl) => {
-    console.log(apiUrl);
+    // console.log(apiUrl);
     setLoading(true);
 
     axios
