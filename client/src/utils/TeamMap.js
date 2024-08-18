@@ -273,6 +273,13 @@ const TeamMap = [
     location: "Seattle",
     logo: SeattleLogo,
   },
+  {
+    id: 59,
+    abbreviation: "UTA",
+    label: "Utah Hockey Club",
+    location: "Salt Lake City",
+    logo: "https://assets.nhle.com/logos/nhl/svg/UTA_light.svg",
+  },
 ];
 
 export default TeamMap;

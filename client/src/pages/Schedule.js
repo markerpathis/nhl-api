@@ -60,8 +60,20 @@ const Schedule = () => {
   }, []);
 
   return (
-    <Container sx={{ bgcolor: "background.paper", margin: "auto", width: "90%", my: "24px", px: "16px", pb: "16px", borderRadius: "10px" }}>
-      <Typography sx={{ fontWeight: 900, fontSize: 33, pt: 2 }}>NHL Schedule</Typography>
+    <Container
+      sx={{
+        bgcolor: "background.paper",
+        margin: "auto",
+        width: "90%",
+        my: "24px",
+        px: "16px",
+        pb: "16px",
+        borderRadius: "10px",
+      }}
+    >
+      <Typography sx={{ fontWeight: 900, fontSize: 33, pt: 2 }}>
+        NHL Schedule
+      </Typography>
 
       <FormControl sx={{ mt: 2, pr: 1 }}>
         <Calendar defaultDate={defaultDate} onDateSelect={dateChangeHandler} />
@@ -71,10 +83,25 @@ const Schedule = () => {
         <TeamSelect onTeamSelect={teamChangeHandler} />
       </FormControl>
 
-      <Typography sx={{ fontStyle: "italic", pt: 1, fontSize: 14 }}>Games will be shown for the next 7 days from your selected date.</Typography>
+      <Typography sx={{ fontStyle: "italic", pt: 1, fontSize: 14 }}>
+        Games will be shown for the next 7 days from your selected date.
+      </Typography>
       {isLoading === true && <SkeletonTable isLoading={isLoading} />}
-      {schedule.length > 0 && isLoading === false && schedule.map((gameDate) => <ScheduleTable key={gameDate.date} schedule={gameDate} apiTeamId={apiTeamId} isLoading={isLoading} />)}
-      {schedule.length === 0 && isLoading === false && <Typography sx={{ fontStyle: "italic", pt: 1, fontSize: 14 }}>No games are scheduled on your selected date.</Typography>}
+      {schedule.length > 0 &&
+        isLoading === false &&
+        schedule.map((gameDate) => (
+          <ScheduleTable
+            key={gameDate.date}
+            schedule={gameDate}
+            apiTeamId={apiTeamId}
+            isLoading={isLoading}
+          />
+        ))}
+      {schedule.length === 0 && isLoading === false && (
+        <Typography sx={{ fontStyle: "italic", pt: 1, fontSize: 14 }}>
+          No games are scheduled on your selected date.
+        </Typography>
+      )}
     </Container>
   );
 };
