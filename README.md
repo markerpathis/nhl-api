@@ -31,16 +31,16 @@ https://github.com/dword4/nhlapi
 
 Below are links to the deployed web application (using Heroku) and the repository on GitHub:
 
-- https://markerpathis.github.io/nhl-api/
+- https://nhl-schedule-475007c36c28.herokuapp.com/
 - https://github.com/markerpathis/nhl-api
 
 Below is a screenshot of the deployed application:
 
-![alt text](/assets/deployedApp.png)
+![alt text](/client/assets/deployedApp.png)
 
 Responsive design:
 
-![alt text](/assets/deployedApp_mobile.png)
+![alt text](/client/assets/deployedApp_mobile.png)
 
 ## License
 
